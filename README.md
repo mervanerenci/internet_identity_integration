@@ -46,6 +46,8 @@ npm install @dfinity/auth-client
 
 npm install @dfinity/agent
 ```
+
+Be sure the change the address with your own canisterID's and project names in `App.jsx` with the provided ids and names in `.env` file.
 If you want to test your project locally, you can use the following commands:
 
 ```bash
