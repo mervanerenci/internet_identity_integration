@@ -1,17 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { ii_demo_backend, createActor } from 'declarations/ii_demo_backend';
 import { AuthClient } from "@dfinity/auth-client";
 import { HttpAgent } from "@dfinity/agent";
 import Posts from './Posts.jsx';
-import Navbar from './Navbar.jsx';
-import Button from '@mui/material/Button';
+
 
 
 
 
 function App() {
   const [who, setWho] = useState('');
-  const [authenticated, setAuthenticated] = useState(false);
   let actor = ii_demo_backend;
 
   async function whoAmI(event)  {
@@ -23,8 +21,6 @@ function App() {
     
     
   }
-
-  const authClientPromise = AuthClient.create();
 
 
   async function login(event) {
@@ -50,26 +46,25 @@ function App() {
 
   async function logOut()  {
 
-      const authClient = await authClientPromise;
+      const authClient = await AuthClient.create();
       await authClient.logout();
 
   }
 
   return (
     <>
-    <Navbar />
+    
     <main>
       <img src="/logo2.svg" alt="DFINITY logo" />
       <br />
       <br />
       <h1>Internet Identity Integration Demo</h1>
       
-      <Button variant="contained" onClick={login}>Login</Button>
-      <Button variant="outlined" color="secondary"  onClick={logOut}>Logout</Button>
+      <button onClick={login}>Login</button>
+      <button onClick={logOut}>Logout</button>
       <br />
   
-      <Button variant="contained" onClick={whoAmI}>Click To See Principal ID!</Button>
-      {/* PRINCIPAL ID/ WHO */}
+      <button onClick={whoAmI}>Click To See Principal ID!</button>
 
       <h6>This is your Principal ID:</h6>
 
