@@ -56,7 +56,7 @@ function App() {
       <br />
   
 
-      <h6>This is your Principal ID:</h6>
+      
       
 
       
