@@ -2,16 +2,25 @@ import { useState } from 'react';
 import { ii_demo_backend, createActor } from 'declarations/ii_demo_backend';
 import { AuthClient } from "@dfinity/auth-client";
 import { HttpAgent } from "@dfinity/agent";
-
+import Posts from './Posts.jsx';
 
 
 
 
 
 function App() {
-  
+  const [who, setWho] = useState('');
   let actor = ii_demo_backend;
 
+  async function whoAmI(event)  {
+    
+    event.preventDefault();
+    const principal = await actor.whoami();
+    console.log(principal.toString());
+    setWho(principal.toString());
+    
+    
+  }
 
 
   async function login(event) {
@@ -55,12 +64,15 @@ function App() {
       <button onClick={logOut}>Logout</button>
       <br />
   
+      <button onClick={whoAmI}>Click To See Principal ID!</button>
+
+      <h6>This is your Principal ID:</h6>
+
+      <h5>{who}</h5>
+      
 
       
-      
-
-      
-      
+      <Posts />
       <br />
       
       
