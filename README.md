@@ -1,20 +1,11 @@
 # Basic Internet Identity Integration 
 
 
-To get started, you might want to explore the project directory structure and the default configuration file. Working with this project in your development environment will not affect any production deployment or identity tokens.
-
-To learn more before you start working with ii_demo, see the following documentation available online:
-
-- [Quick Start](https://internetcomputer.org/docs/current/developer-docs/setup/deploy-locally)
-- [SDK Developer Tools](https://internetcomputer.org/docs/current/developer-docs/setup/install)
-- [Motoko Programming Language Guide](https://internetcomputer.org/docs/current/motoko/main/motoko)
-- [Motoko Language Quick Reference](https://internetcomputer.org/docs/current/motoko/main/language-manual)
-
-
 
 This project aims to teach authentication with Internet Identity(II). In this project you will learn:
 - how to login/logout with II
 - how to restrict content to unauthenticated users
+- how to integrate backend canister to frontend.
 
 We will create a backend with adding Post functionality where users can create post with text content, and a whoami function to retrieve the caller.
 With internet identity, only logged in users can see the posts.
